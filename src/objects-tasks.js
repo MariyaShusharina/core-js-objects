@@ -185,8 +185,18 @@ function sellTickets(/* queue */) {
  *    console.log(r.height);      // => 20
  *    console.log(r.getArea());   // => 200
  */
-function Rectangle(/* width, height */) {
-  throw new Error('Not implemented');
+function Rectangle(width, height) {
+  const rectangle = {
+    width: 0,
+    height: 0,
+    getArea() {
+      return this.width * this.height;
+    },
+  };
+  const r = Object.create(rectangle);
+  r.width = width;
+  r.height = height;
+  return r;
 }
 
 /**
